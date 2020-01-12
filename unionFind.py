@@ -10,7 +10,7 @@ class Node:
             added = " " + str(self.parent.id)
         return str(self.id) + added
 
-    def find(self):
+    def find(self) -> 'Node':
         if self.parent == None:
             return self
         else:
@@ -18,9 +18,7 @@ class Node:
             self.parent = root
             return root
 
-            #return self.parent.find()
-
-    def unite(self, other):
+    def unite(self, other: 'Node'):
         p1, p2 = self.find(), other.find()
         if not p1 == p2:
             p1.parent = p2
